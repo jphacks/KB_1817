@@ -1,0 +1,23 @@
+@charset "utf-8";
+@-ms-viewport {
+    width: device-width;
+}
+
+body{
+    background-color: #fa8072;
+}
+h1 {
+    color: whitesmoke;
+    font-size: 40px;
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+    }
+p {
+    color: whitesmoke;
+    font-size: 18px;
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    padding: 0px 0px 0px 0px;
+}
