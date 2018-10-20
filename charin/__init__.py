@@ -7,4 +7,4 @@ app.config.from_object('charin.config')
 
 db = SQLAlchemy(app)
 
-# import charin.views
+import charin.views
