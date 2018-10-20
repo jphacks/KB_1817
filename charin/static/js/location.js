@@ -34,6 +34,7 @@ function locate(position) {
     xhr_post.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
+    console.log(latitude,longitude);
     xhr_post.send(`latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&date=${date}`);
 }
 
