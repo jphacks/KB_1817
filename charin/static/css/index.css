@@ -6,6 +6,12 @@
 body{
     background-color: #ffc77f;
 }
+p{
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    color: #ff5c5c;
+    font-size: 32px;
+    font-weight: bold;
+}
 
 .cp_navi {
     background-color: #ffffff;
@@ -42,7 +48,7 @@ body{
     }
 .cp_navi > ul > li > a {
         color: #979494;
-        font-size: 30px;
+        font-size: 40px;
         font-family: 'Bree Serif', serif;
         display: block;
         line-height: 80px;
