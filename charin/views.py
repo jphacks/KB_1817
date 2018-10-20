@@ -1,6 +1,7 @@
 from flask import request, redirect, url_for, render_template, flash, abort, session
 from charin import app, db
 from charin.models import User
+import math
 
 #index
 @app.route('/')
@@ -21,13 +22,25 @@ def locate():
     db.session.commit()
 
     return ""
-# @app.route('/get_users_location', methods=['GET'])
-# def get_users_location():
-#     user_id = session.get('user_id')
-#     user = db.session.query(User).filter(User.id==user_id).first()
-#     latitude = user.latitude
-#     longitude = user.longitude
-#     near_users = db.session.query(User).f
+@app.route('/get_users_location', methods=['GET'])
+def get_users_location():
+    user_id = session.get('user_id')
+    user = db.session.query(User).filter(User.id==user_id).first()
+    latitude = user.latitude
+    longitude = user.longitude
+
+    near_radius = math.sqrt((0.009**2)+(0.009**2))
+    min_latitude = latitude - near_radius
+    max_latitude = latitude + near_radius
+    min_longitude = longitude - near_radius
+    max_longitude = longitude + near_radius
+
+    near_users = db.session.query(User).filter((User.latitude >= min_latitude) | (User.latitude <= max_latitude) | (User.longitude >= min_longitude) | (User.longitude <= max_longitude)).all()
+    for near_user in near_users:
+        if near_user == user:
+            near_users.remove(near_user)
+    print(near_users)
+    return ""
 
 #投げ銭する
 # @app.route('/give', methods=['GET','POST'])

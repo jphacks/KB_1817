@@ -12,17 +12,17 @@ function locate(position) {
     var date = new Date(position.timestamp);
     console.log("locate動いた")
     //サーバーと非同期通信データ受け取り
-    var xhr= new XMLHttpRequest();
-    // xhr.open("GET","/index.html",true);
-    // xhr.send();
+    var xhr_get= new XMLHttpRequest();
+    xhr_get.open('GET','/get_users_location',true);
+    xhr_get.send(null);
 
     //データ送る
-
-    xhr.open('POST','/locate_user',true);
-    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    var xhr_post = new XMLHttpRequest();
+    xhr_post.open('POST','/locate_user',true);
+    xhr_post.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    xhr.send(`latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&date=${date}`);
+    xhr_post.send(`latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&date=${date}`);
 }
 
 setInterval(geolocation(), 5000);
