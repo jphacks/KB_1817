@@ -8,6 +8,7 @@ class User(db.Model):
     name = db.Column(db.String(100), default='', nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     _password = db.Column('password', db.String(100), nullable=False)
+    credit = db.Column(db.Integer,default='100',nullable=False)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
 
