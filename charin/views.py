@@ -13,6 +13,13 @@ def locate():
     location = request.form
     latitude = location["latitude"]
     longitude = location["longitude"]
+    user_id = session.get('user_id')
+
+    user_locate = db.session.query(User).filter(User.id==user_id)
+    user_locate.latitude = latitude
+    user_locate.longitude = longitude
+    db.session.commit()
+
     return ""
 
 #投げ銭する
@@ -30,6 +37,7 @@ def user_create():
                     password=request.form['password'])
         db.session.add(user)
         db.session.commit()
+        session['user_id'] = user.id
     return render_template('user/create.html')
 
 #login
@@ -51,4 +59,4 @@ def login():
 def logout():
     session.pop('user_id', None)
     flash('You were logged out')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('index'))
