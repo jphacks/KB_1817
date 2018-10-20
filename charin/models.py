@@ -47,5 +47,6 @@ class Transaction(db.Model):
     from_whom_id = db.Column(db.Integer, nullable=False)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
-def init():
+if __name__ == "__main__":
+# def init():
     db.create_all()
