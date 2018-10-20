@@ -1,33 +1,47 @@
 //GPS取得
 var num = 0;
 var watch_id;
-
+var near_users = null;
 //開いてから位置情報を得るたびにこれが動く
-window.onload = function(){
-    watch_id = navigator.geolocation.watchPosition(test2, function(e) { alert(e.message); }, {"enableHighAccuracy": true, "timeout": 50000, "maximumAge": 5000});
-}
 
-//画面に表示させてるだけ
-function test2(position) {
+function geolocation() {
+    watch_id = navigator.geolocation.watchPosition(locate, function(e) { alert(e.message); }, {"enableHighAccuracy": true, "timeout": 50000, "maximumAge": 100000});
+};
 
-    var geo_text = "緯度:" + position.coords.latitude + "\n";
-    geo_text += "経度:" + position.coords.longitude + "\n";
-    geo_text += "高度:" + position.coords.altitude + "\n";
+function locate(position) {
     var date = new Date(position.timestamp);
-    geo_text += "取得時刻:" + date + "\n";
+    console.log("locate動いた")
+    //サーバーと非同期通信データ受け取り
+    var xhr_get= new XMLHttpRequest();
+    xhr_get.onreadystatechange = function() {
+        if (xhr_get.readyState === 4) {
+            near_users = xhr_get.response;
+            console.log(near_users);
+        }
+      }
+    xhr_get.open('GET','/get_users_location',true);
+    xhr_get.responseType = 'json'
+    xhr_get.send(null);
 
     document.getElementById('position_view').innerHTML = geo_text;
     var h = '<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsZde941F2kZ3dldrfmmnj_v9ygcOpxhA&q=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=17" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>'
     document.getElementById('map').innerHTML = h ;
 
+
+    //データ送る
+    var xhr_post = new XMLHttpRequest();
+    xhr_post.open('POST','/locate_user',true);
+    xhr_post.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    xhr_post.send(`latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&date=${date}`);
 }
 
-//サーバーと非同期通信データ受け取り
-var xhr= new XMLHttpRequest();
-xhr.open("GET","/index.html",true);
-xhr.send();
+function give() {
+    var xhr_post = new XMLHttpRequest();
+    xhr_post.open('POST','/give',true);
+    xhr_post.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    xhr_post.send(`near_users=${near_users}`);
+}
 
-//データ送る
-xhr.open('POST', '/index.html',true);
-xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-xhr.send( 'latitude=position.coords.latitude&longitude=position.coords.longitude&altitude=position.coords.altitude&date=date' );
+setInterval(geolocation(), 50000);

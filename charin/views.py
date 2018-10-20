@@ -1,16 +1,79 @@
-from flask import request, redirect, url_for, render_template, flash, abort, session
+from flask import request, redirect, url_for, render_template, flash, abort, session, jsonify
 from charin import app, db
 from charin.models import User
+import math
+import json
 
+default_give = 10
 #index
 @app.route('/')
 def index():
     return render_template('index.html')
 
-#投げ銭する
-@app.route('/give')
+#位置情報を定期的にDBヘ
+@app.route('/locate_user', methods=['POST'])
+def locate():
+    location = request.form
+    latitude = location["latitude"]
+    longitude = location["longitude"]
+    user_id = session.get('user_id')
+
+    user_locate = db.session.query(User).filter(User.id==user_id).first()
+    user_locate.latitude = latitude
+    user_locate.longitude = longitude
+    db.session.commit()
+
+    return ""
+
+@app.route('/get_users_location', methods=['GET'])
+def get_users_location():
+    user_id = session.get('user_id')
+    user = db.session.query(User).filter(User.id==user_id).first()
+    latitude = user.latitude
+    longitude = user.longitude
+
+    near_radius = math.sqrt((0.009**2)+(0.009**2))
+    min_latitude = latitude - near_radius
+    max_latitude = latitude + near_radius
+    min_longitude = longitude - near_radius
+    max_longitude = longitude + near_radius
+
+    near_users = db.session.query(User).filter((User.latitude >= min_latitude) | (User.latitude <= max_latitude) | (User.longitude >= min_longitude) | (User.longitude <= max_longitude)).all()
+    response = []
+    for near_user in near_users:
+        if near_user == user:
+            near_users.remove(near_user)
+        else:
+            response.append(near_user.id)
+    return jsonify(near_users=near_users)
+
+# 投げ銭する
+@app.route('/give', methods=['POST'])
 def give():
-    
+    user_id = session.get('user_id')
+    requests = request.form["near_users"]
+    dec = json.loads(requests)
+    near_users = dec["near_users"]
+    if len(near_users) > 0:
+        #投げ銭したユーザーから残高を引く
+        give_user = db.session.query(User).filter(User.id==user_id).first()
+        now_credit = give_user.credit
+        after_credit = now_credit - default_give
+        give_user.credit = after_credit
+
+        #近くにいたユーザーで投げ銭を山分け
+        each_take = default_give // len(near_users)
+        for near_user in near_users:
+            user_id = near_user.id
+            user = db.session.query(User).filter(User.id==user_id).first()
+            now_credit = user.credit
+            after_credit = now_credit + each_take
+            user.credit = after_credit
+
+        db.session.commit()
+    else:
+        flash('近くに誰もいません...')
+    return ""
 
 #user周り
 #新規user作成
@@ -22,6 +85,7 @@ def user_create():
                     password=request.form['password'])
         db.session.add(user)
         db.session.commit()
+        session['user_id'] = user.id
     return render_template('user/create.html')
 
 #login
@@ -43,4 +107,4 @@ def login():
 def logout():
     session.pop('user_id', None)
     flash('You were logged out')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('index'))
