@@ -22,6 +22,7 @@ def locate():
     user_locate.latitude = latitude
     user_locate.longitude = longitude
     db.session.commit()
+    db.session.close()
 
     return ""
 
@@ -31,6 +32,7 @@ def get_users_location():
     user = db.session.query(User).filter(User.id==user_id).first()
     latitude = user.latitude
     longitude = user.longitude
+    print(latitude,longitude)
 
     near_radius = math.sqrt((0.009**2)+(0.009**2))
     min_latitude = latitude - near_radius
@@ -41,11 +43,15 @@ def get_users_location():
     near_users = db.session.query(User).filter((User.latitude >= min_latitude) | (User.latitude <= max_latitude) | (User.longitude >= min_longitude) | (User.longitude <= max_longitude)).all()
     response = []
     for near_user in near_users:
+        user_dict = {}
         if near_user == user:
             near_users.remove(near_user)
         else:
-            response.append(near_user.id)
-    return jsonify(near_users=near_users)
+            user_dict[near_user.id] = (near_user.latitude,near_user.longitude)
+            response.append(user_dict)
+            print(response)
+    db.session.close()
+    return jsonify(near_users=response)
 
 # 投げ銭する
 @app.route('/give', methods=['POST'])
@@ -71,6 +77,7 @@ def give():
             user.credit = after_credit
 
         db.session.commit()
+        db.session.close()
     else:
         flash('近くに誰もいません...')
     return ""
@@ -86,6 +93,7 @@ def user_create():
         db.session.add(user)
         db.session.commit()
         session['user_id'] = user.id
+    db.session.close()
     return render_template('user/create.html')
 
 #login
@@ -100,6 +108,7 @@ def login():
             return redirect(url_for('index'))
         else:
             flash('Invalid email or password')
+    db.session.close()
     return render_template('login.html')
 
 #logout
