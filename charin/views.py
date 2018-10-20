@@ -7,10 +7,18 @@ from charin.models import User
 def index():
     return render_template('index.html')
 
+#位置情報を定期的にDBヘ
+@app.route('/locate', methods=['POST'])
+def locate():
+    location = request.form
+    latitude = location["latitude"]
+    longitude = location["longitude"]
+    return ""
+
 #投げ銭する
-@app.route('/give')
-def give():
-    
+# @app.route('/give', methods=['GET','POST'])
+# def give():
+#     if request.method == 'POST':
 
 #user周り
 #新規user作成
