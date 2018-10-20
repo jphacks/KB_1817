@@ -41,9 +41,9 @@ body{
                 transition: color 0.1s linear;
     }
 .cp_navi > ul > li > a {
-        color: #aaaaaa;
+        color: #979494;
         font-size: 30px;
-        font-family: 'Courier New','Lucida Grande',sans-serif;
+        font-family: 'Bree Serif', serif;
         display: block;
         line-height: 80px;
         padding: 0 10px;
@@ -101,7 +101,7 @@ body{
     font-weight: bold;
     border: 3px solid white;
     padding: 20px 40px;
-    position: 
+    position: relative;
 }
 .box1 {
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
