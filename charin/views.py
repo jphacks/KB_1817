@@ -108,3 +108,8 @@ def logout():
     session.pop('user_id', None)
     flash('You were logged out')
     return redirect(url_for('index'))
+
+#iframe
+@app.route('/maps')
+def maps():
+    return render_template('maps.html')
