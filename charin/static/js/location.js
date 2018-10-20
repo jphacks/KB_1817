@@ -23,6 +23,8 @@ function locate(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     xhr.send(`latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&date=${date}`);
+    var h = '<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsZde941F2kZ3dldrfmmnj_v9ygcOpxhA&q=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=17" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>'
+    document.getElementById('map').innerHTML = h ;
 }
 
 setInterval(geolocation(), 5000);
