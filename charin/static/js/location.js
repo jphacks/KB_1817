@@ -1,7 +1,7 @@
 //GPS取得
 var num = 0;
 var watch_id;
-var near_users = null;
+var near_users = [1,34.7308,135.237,2,34.7309,135.238];
 //開いてから位置情報を得るたびにこれが動く
 
 function geolocation() {
