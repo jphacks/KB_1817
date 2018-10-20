@@ -29,8 +29,8 @@ def locate():
 @app.route('/get_users_location', methods=['GET'])
 def get_users_location():
     user_id = session.get('user_id')
-    print(user_id)
     user = db.session.query(User).filter(User.id==user_id).first()
+    print(vars(user))
     latitude = user.latitude
     longitude = user.longitude
     print(latitude,longitude)
