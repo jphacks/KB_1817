@@ -6,6 +6,24 @@
 body{
     background-color: #fa8072;
 }
+h1 {
+    color: whitesmoke;
+    font-size: 40px;
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+    }
+h1:before, h1:after{
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 3px;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-color: white;
+    }
 
 .cp_navi {
     background-color: #ffffff;
@@ -16,7 +34,7 @@ body{
     display: block;
     margin: 1em 1%;
     overflow: hidden;
-    width: 75%;
+    width: 95%;
     }
 .cp_navi ul {
         margin: 0px;
@@ -88,7 +106,58 @@ body{
         background-color: rgba( 255, 255, 255, 0.1);
     }
 
-.new_point p {
-    color: brown;
-    font-size: 100px;
+.now_point {
+    margin: auto;
+}
+
+.now_point p {
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    color: wheat;
+    font-size: 20px;
+    border: 3px solid white;
+    padding: 20px 40px;
+}
+.box1 {
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    border: solid 1px white;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+  }
+  .map {
+    border: solid 1px white;
+    height: 300px;
+    weight: 60px;
+  }
+  .btn{
+    display: inline-block;
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    text-decoration: none;
+    color: #f9a9ae;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffffff 100%);
+    background-image: linear-gradient(#fed6e3 0%, #ffffff 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+
+.btn:active{/*押したとき*/
+    -ms-transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);/*沈むように*/
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffbcbc 100%);
+    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
 }
