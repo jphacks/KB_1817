@@ -128,8 +128,8 @@ h1:before, h1:after{
   .map {
     border: solid 1px white;
     height: 300px;
-    weight: 60px;
-  }
+    width: 100%;
+}
   .btn{
     display: inline-block;
     position: absolute;
