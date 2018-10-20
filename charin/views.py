@@ -48,12 +48,8 @@ def get_users_location():
             near_users.remove(near_user)
         else:
             user_dict[near_user.id] = (near_user.latitude,near_user.longitude)
-<<<<<<< HEAD
-            response.append(near_user.id)
-=======
             response.append(user_dict)
             print(response)
->>>>>>> d47582bf9db30e6d9657c2bc6cb2a72a51251d4f
     db.session.close()
     return jsonify(near_users=response)
 
