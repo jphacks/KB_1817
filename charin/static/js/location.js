@@ -23,11 +23,6 @@ function locate(position) {
     xhr_get.responseType = 'json'
     xhr_get.send(null);
 
-    document.getElementById('position_view').innerHTML = geo_text;
-    var h = '<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsZde941F2kZ3dldrfmmnj_v9ygcOpxhA&q=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=17" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>'
-    document.getElementById('map').innerHTML = h ;
-
-
     //データ送る
     var xhr_post = new XMLHttpRequest();
     xhr_post.open('POST','/locate_user',true);
