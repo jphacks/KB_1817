@@ -7,6 +7,11 @@ from charin.models import User
 def index():
     return render_template('index.html')
 
+#投げ銭する
+@app.route('/give')
+def give():
+    
+
 #user周り
 #新規user作成
 @app.route('/user/create/', methods=['GET', 'POST'])
