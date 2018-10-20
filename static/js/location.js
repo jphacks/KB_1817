@@ -2,16 +2,18 @@
 var num = 0;
 var watch_id;
 
+//開いてから位置情報を得るたびにこれが動く
 window.onload = function(){
     watch_id = navigator.geolocation.watchPosition(test2, function(e) { alert(e.message); }, {"enableHighAccuracy": true, "timeout": 50000, "maximumAge": 5000});
 }
 
-//開いてから位置情報を得るたびにこれが動く
+//画面に表示させてるだけ
 function test2(position) {
 
     var geo_text = "緯度:" + position.coords.latitude + "\n";
     geo_text += "経度:" + position.coords.longitude + "\n";
     geo_text += "高度:" + position.coords.altitude + "\n";
+    var date = new Date(position.timestamp);
     geo_text += "取得時刻:" + date + "\n";
 
     document.getElementById('position_view').innerHTML = geo_text;
