@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 #位置情報を定期的にDBヘ
-@app.route('/locate', methods=['POST'])
+@app.route('/locate_user', methods=['POST'])
 def locate():
     location = request.form
     latitude = location["latitude"]
@@ -21,6 +21,13 @@ def locate():
     db.session.commit()
 
     return ""
+# @app.route('/get_users_location', methods=['GET'])
+# def get_users_location():
+#     user_id = session.get('user_id')
+#     user = db.session.query(User).filter(User.id==user_id).first()
+#     latitude = user.latitude
+#     longitude = user.longitude
+#     near_users = db.session.query(User).f
 
 #投げ銭する
 # @app.route('/give', methods=['GET','POST'])
