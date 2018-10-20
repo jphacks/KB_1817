@@ -115,6 +115,23 @@ p{
     line-height: 50px;
     margin-left: 20px;
   }
+  .blink {
+    animation: 0.8s linear infinite blink_effect;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    color: #ff5c5c;
+    font-size: 32px;
+  }
+  @keyframes blink_effect {
+      0% {
+          visibility: hidden;
+      }
+      50% {
+          visibility: hidden;
+      }
+      100% {
+          visibility: visible;
+      }
+  }
   .map {
     border: solid 1px white;
     height: 300px;
