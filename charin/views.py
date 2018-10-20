@@ -41,11 +41,13 @@ def get_users_location():
     near_users = db.session.query(User).filter((User.latitude >= min_latitude) | (User.latitude <= max_latitude) | (User.longitude >= min_longitude) | (User.longitude <= max_longitude)).all()
     response = []
     for near_user in near_users:
+        user_dict = {}
         if near_user == user:
             near_users.remove(near_user)
         else:
+            user_dict[near_user.id] = (near_user.latitude,near_user.longitude)
             response.append(near_user.id)
-    return jsonify(near_users=near_users)
+    return jsonify(near_users=response)
 
 # 投げ銭する
 @app.route('/give', methods=['POST'])
