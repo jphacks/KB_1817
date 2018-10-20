@@ -4,28 +4,8 @@
 }
 
 body{
-    background-color: #fa8072;
+    background-color: #ffc77f;
 }
-
-h1 {
-    color: whitesmoke;
-    font-size: 160px;
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    position: relative;
-    padding: 0.25em 1em;
-    border-top: solid 8px white;
-    border-bottom: solid 8px white;
-    margin: 2px;
-    }
-h1:before, h1:after{
-    content: '';
-    position: absolute;
-    top: -7px;
-    width: 3px;
-    height: -webkit-calc(100% + 14px);
-    height: calc(100% + 14px);
-    background-color: white;
-    }
 
 .cp_navi {
     background-color: #ffffff;
@@ -116,7 +96,7 @@ h1:before, h1:after{
 
 .now_point p {
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    color: wheat;
+    color: #ff5c5c;
     font-size: 28px;
     font-weight: bold;
     border: 3px solid white;
@@ -135,35 +115,4 @@ h1:before, h1:after{
     border: solid 1px white;
     height: 300px;
     width: 100%;
-}
-  .btn{
-    display: inline-block;
-    position: relative;
-    bottom: 0;
-    text-decoration: none;
-    color: #f9a9ae;
-    width: 300px;
-    height: 120px;
-    line-height: 70px;
-    border-radius: 5px;
-    text-align: center;
-    padding-top: 50px;
-    vertical-align: middle;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 50px;
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffffff 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffffff 100%);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-}
-
-.btn:active{/*押したとき*/
-    -ms-transform: translateY(2px);
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);/*沈むように*/
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffbcbc 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
 }
