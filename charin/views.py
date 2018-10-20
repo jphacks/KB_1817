@@ -15,7 +15,7 @@ def locate():
     longitude = location["longitude"]
     user_id = session.get('user_id')
 
-    user_locate = db.session.query(User).filter(User.id==user_id)
+    user_locate = db.session.query(User).filter(User.id==user_id).first()
     user_locate.latitude = latitude
     user_locate.longitude = longitude
     db.session.commit()
