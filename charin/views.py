@@ -32,6 +32,7 @@ def get_users_location():
     user = db.session.query(User).filter(User.id==user_id).first()
     latitude = user.latitude
     longitude = user.longitude
+    print(latitude,longitude)
 
     near_radius = math.sqrt((0.009**2)+(0.009**2))
     min_latitude = latitude - near_radius
