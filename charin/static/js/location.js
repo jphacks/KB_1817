@@ -17,6 +17,8 @@ function test2(position) {
     geo_text += "取得時刻:" + date + "\n";
 
     document.getElementById('position_view').innerHTML = geo_text;
+    var h = '<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAsZde941F2kZ3dldrfmmnj_v9ygcOpxhA&q=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=17" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>'
+    document.getElementById('map').innerHTML = h ;
 
 }
 

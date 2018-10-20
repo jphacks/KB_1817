@@ -6,14 +6,15 @@
 body{
     background-color: #fa8072;
 }
+
 h1 {
     color: whitesmoke;
-    font-size: 40px;
+    font-size: 160px;
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
     position: relative;
     padding: 0.25em 1em;
-    border-top: solid 3px white;
-    border-bottom: solid 3px white;
+    border-top: solid 8px white;
+    border-bottom: solid 8px white;
     }
 h1:before, h1:after{
     content: '';
@@ -32,7 +33,7 @@ h1:before, h1:after{
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888888;
     display: block;
-    margin: 1em 1%;
+    margin: 0px;
     overflow: hidden;
     width: 95%;
     }
@@ -61,7 +62,7 @@ h1:before, h1:after{
 .cp_navi > ul > li > a {
         color: #aaaaaa;
         display: block;
-        line-height: 56px;
+        line-height: 80px;
         padding: 0 10px;
         text-decoration: none;
     }
@@ -135,6 +136,7 @@ h1:before, h1:after{
     position: absolute;
     top: 90%;
     left: 35%;
+    bottom: 0;
     text-decoration: none;
     color: #f9a9ae;
     width: 150px;
