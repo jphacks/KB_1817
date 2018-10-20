@@ -95,21 +95,19 @@ body{
 }
 
 .now_point p {
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     color: #ff5c5c;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     border: 3px solid white;
     padding: 20px 40px;
     position: relative;
 }
 .box1 {
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    border: solid 1px white;
+    border: solid 1px #ffc77f;
     box-sizing: border-box;
-    text-align: center;
     line-height: 50px;
-    font-size: 24px;
+    margin-left: 20px;
   }
   .map {
     border: solid 1px white;
