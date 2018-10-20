@@ -18,7 +18,7 @@ function locate(position) {
 
     //データ送る
 
-    xhr.open('POST','/locate',true);
+    xhr.open('POST','/locate_user',true);
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
