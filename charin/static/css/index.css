@@ -15,6 +15,7 @@ h1 {
     padding: 0.25em 1em;
     border-top: solid 8px white;
     border-bottom: solid 8px white;
+    margin: 2px;
     }
 h1:before, h1:after{
     content: '';
@@ -33,12 +34,12 @@ h1:before, h1:after{
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888888;
     display: block;
-    margin: 0px;
+    margin: 20px ;
     overflow: hidden;
     width: 95%;
     }
 .cp_navi ul {
-        margin: 0px;
+        margin: auto;
         padding: 0px;
     }
 .cp_navi ul li {
@@ -61,21 +62,23 @@ h1:before, h1:after{
     }
 .cp_navi > ul > li > a {
         color: #aaaaaa;
+        font-size: 30px;
+        font-family: 'Courier New','Lucida Grande',sans-serif;
         display: block;
         line-height: 80px;
         padding: 0 10px;
         text-decoration: none;
     }
-    .cp_navi > ul > li:hover {
+.cp_navi > ul > li:hover {
         background-color: rgb(218, 60, 65);
     }
-    .cp_navi > ul > li:hover > a {
+.cp_navi > ul > li:hover > a {
         color: rgb( 255, 255, 255 );
     }
-    .cp_navi > ul > li:hover > a > .caret {
+.cp_navi > ul > li:hover > a > .caret {
         border-top-color: rgb( 255, 255, 255 );
     }
-    .cp_navi > ul > li > div {
+.cp_navi > ul > li > div {
         background-color: rgb(218, 60, 65);
         border-top: 0;
         border-radius: 0 0 4px 4px;
@@ -89,21 +92,21 @@ h1:before, h1:after{
         -webkit-transiton: opacity 0.2s;
                transition: opacity 0.2s;
     }
-    .cp_navi > ul > li:hover > div {
+.cp_navi > ul > li:hover > div {
         display: block;
         opacity: 1;
         visibility: visible;
     }
-    .cp_navi > ul > li > div ul > li {
+.cp_navi > ul > li > div ul > li {
         display: block;
     }
-    .cp_navi > ul > li > div ul > li > a {
+.cp_navi > ul > li > div ul > li > a {
         color: #ffffff;
         display: block;
         padding: 12px 24px;
         text-decoration: none;
     }
-    .cp_navi > ul > li > div ul > li:hover > a {
+.cp_navi > ul > li > div ul > li:hover > a {
         background-color: rgba( 255, 255, 255, 0.1);
     }
 
@@ -114,17 +117,19 @@ h1:before, h1:after{
 .now_point p {
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
     color: wheat;
-    font-size: 20px;
+    font-size: 28px;
+    font-weight: bold;
     border: 3px solid white;
     padding: 20px 40px;
+    position: 
 }
 .box1 {
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
     border: solid 1px white;
     box-sizing: border-box;
     text-align: center;
-    line-height: 20px;
-    font-size: 18px;
+    line-height: 50px;
+    font-size: 24px;
   }
   .map {
     border: solid 1px white;
@@ -133,21 +138,20 @@ h1:before, h1:after{
 }
   .btn{
     display: inline-block;
-    position: absolute;
-    top: 90%;
-    left: 35%;
+    position: relative;
     bottom: 0;
     text-decoration: none;
     color: #f9a9ae;
-    width: 150px;
-    height: 50px;
-    line-height: 50px;
+    width: 300px;
+    height: 120px;
+    line-height: 70px;
     border-radius: 5px;
     text-align: center;
+    padding-top: 50px;
     vertical-align: middle;
     overflow: hidden;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
     font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
     background-image: -webkit-linear-gradient(#fed6e3 0%, #ffffff 100%);
     background-image: linear-gradient(#fed6e3 0%, #ffffff 100%);
