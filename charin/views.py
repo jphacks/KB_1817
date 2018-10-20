@@ -77,6 +77,7 @@ def give():
         db.session.commit()
         db.session.close()
     else:
+        print('近くに誰もいません')
         flash('近くに誰もいません...')
     return ""
 
