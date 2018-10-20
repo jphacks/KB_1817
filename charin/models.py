@@ -4,6 +4,7 @@ from charin import db
 
 class User(db.Model):
     __tablename__ = 'users'
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), default='', nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -42,6 +43,7 @@ class User(db.Model):
 
 class Transaction(db.Model):
     __tablename__ = 'transactions'
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     to_whom_id = db.Column(db.Integer, nullable=False)
     from_whom_id = db.Column(db.Integer, nullable=False)
