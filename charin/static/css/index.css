@@ -4,26 +4,8 @@
 }
 
 body{
-    background-color: #fa8072;
+    background-color: #ffc77f;
 }
-h1 {
-    color: whitesmoke;
-    font-size: 40px;
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    position: relative;
-    padding: 0.25em 1em;
-    border-top: solid 3px white;
-    border-bottom: solid 3px white;
-    }
-h1:before, h1:after{
-    content: '';
-    position: absolute;
-    top: -7px;
-    width: 3px;
-    height: -webkit-calc(100% + 14px);
-    height: calc(100% + 14px);
-    background-color: white;
-    }
 
 .cp_navi {
     background-color: #ffffff;
@@ -32,12 +14,12 @@ h1:before, h1:after{
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888888;
     display: block;
-    margin: 1em 1%;
+    margin: 20px ;
     overflow: hidden;
     width: 95%;
     }
 .cp_navi ul {
-        margin: 0px;
+        margin: auto;
         padding: 0px;
     }
 .cp_navi ul li {
@@ -59,22 +41,24 @@ h1:before, h1:after{
                 transition: color 0.1s linear;
     }
 .cp_navi > ul > li > a {
-        color: #aaaaaa;
+        color: #979494;
+        font-size: 30px;
+        font-family: 'Bree Serif', serif;
         display: block;
-        line-height: 56px;
+        line-height: 80px;
         padding: 0 10px;
         text-decoration: none;
     }
-    .cp_navi > ul > li:hover {
+.cp_navi > ul > li:hover {
         background-color: rgb(218, 60, 65);
     }
-    .cp_navi > ul > li:hover > a {
+.cp_navi > ul > li:hover > a {
         color: rgb( 255, 255, 255 );
     }
-    .cp_navi > ul > li:hover > a > .caret {
+.cp_navi > ul > li:hover > a > .caret {
         border-top-color: rgb( 255, 255, 255 );
     }
-    .cp_navi > ul > li > div {
+.cp_navi > ul > li > div {
         background-color: rgb(218, 60, 65);
         border-top: 0;
         border-radius: 0 0 4px 4px;
@@ -88,21 +72,21 @@ h1:before, h1:after{
         -webkit-transiton: opacity 0.2s;
                transition: opacity 0.2s;
     }
-    .cp_navi > ul > li:hover > div {
+.cp_navi > ul > li:hover > div {
         display: block;
         opacity: 1;
         visibility: visible;
     }
-    .cp_navi > ul > li > div ul > li {
+.cp_navi > ul > li > div ul > li {
         display: block;
     }
-    .cp_navi > ul > li > div ul > li > a {
+.cp_navi > ul > li > div ul > li > a {
         color: #ffffff;
         display: block;
         padding: 12px 24px;
         text-decoration: none;
     }
-    .cp_navi > ul > li > div ul > li:hover > a {
+.cp_navi > ul > li > div ul > li:hover > a {
         background-color: rgba( 255, 255, 255, 0.1);
     }
 
@@ -111,53 +95,22 @@ h1:before, h1:after{
 }
 
 .now_point p {
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    color: wheat;
-    font-size: 20px;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    color: #ff5c5c;
+    font-size: 32px;
+    font-weight: bold;
     border: 3px solid white;
     padding: 20px 40px;
+    position: relative;
 }
 .box1 {
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    border: solid 1px white;
+    border: solid 1px #ffc77f;
     box-sizing: border-box;
-    text-align: center;
-    line-height: 20px;
-    font-size: 18px;
+    line-height: 50px;
+    margin-left: 20px;
   }
   .map {
     border: solid 1px white;
     height: 300px;
     width: 100%;
-}
-  .btn{
-    display: inline-block;
-    position: absolute;
-    top: 90%;
-    left: 35%;
-    text-decoration: none;
-    color: #f9a9ae;
-    width: 150px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 5px;
-    text-align: center;
-    vertical-align: middle;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: '游明朝体+36ポかな','YuMincho +36p Kana',sans-serif;
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffffff 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffffff 100%);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-}
-
-.btn:active{/*押したとき*/
-    -ms-transform: translateY(2px);
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);/*沈むように*/
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffbcbc 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
 }
