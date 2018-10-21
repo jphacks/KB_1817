@@ -34,23 +34,12 @@
 #### API・データ
 今回スポンサーから提供されたAPI、製品などの外部技術があれば記述をして下さい。
 
-* 
-* 
-* 
+* 位置情報取得：(Geolocation API)[https://developer.mozilla.org/ja/docs/Web/API/Geolocation/Using_geolocation]
+* Map表示：(Google Maps API)[https://cloud.google.com/maps-platform/?hl=ja]
 
 #### フレームワーク・ライブラリ・モジュール
-* 
-* 
-
-#### デバイス
-* 
-* 
-
-### 研究内容・事前開発プロダクト（任意）
-ご自身やチームの研究内容や、事前に持ち込みをしたプロダクトがある場合は、こちらに実績なども含め記載をして下さい。
-
-* 
-* 
+* Flask(Python)
+* Heroku
 
 
 ### 独自開発技術（Hack Dayで開発したもの）
