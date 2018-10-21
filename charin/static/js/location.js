@@ -78,4 +78,4 @@ for(var i =0; i <near_users["near_users"].length; i++){
 });
 }
 
-setInterval(geolocation(), 50000);
+setInterval(geolocation(), 5000);
