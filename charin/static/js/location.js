@@ -27,8 +27,9 @@ function locate(position) {
     var xhr_post = new XMLHttpRequest();
     xhr_post.onreadystatechange = function() {
         if (xhr_post.readyState === 4) {
-            var credit = xhr_post.response;
-            var now_credit = document.getElementById("credit")
+            var credit = parseInt(xhr_post.response);
+            var now_credit = parseInt(document.getElementById("credit"))
+            console.log(credit,now_credit)
             if (now_credit < credit ) {
                 alert("あなたに誰かがCharinしました！")
             }
