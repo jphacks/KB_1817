@@ -34,6 +34,7 @@ function locate(position) {
             if (now_credit < credit ) {
                 alert("あなたに誰かがCharinしました！");
                 now_credit = credit;
+                document.getElementById("cre").innerHTML=`現在のポイントは　　　${ credit }pt`;
 
             }
         }
