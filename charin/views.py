@@ -72,7 +72,7 @@ def give():
         #投げ銭したユーザーから残高を引く
         give_user = db.session.query(User).filter(User.id==user_id).first()
         now_credit = give_user.credit
-        after_credit = now_credit + default_give
+        after_credit = now_credit - default_give
         give_user.credit = after_credit
 
         #近くにいたユーザーで投げ銭を山分け
