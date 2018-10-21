@@ -2,6 +2,7 @@
 var num = 0;
 var watch_id;
 var near_users;
+var now_credit;
 //開いてから位置情報を得るたびにこれが動く
 
 function geolocation() {
@@ -28,10 +29,12 @@ function locate(position) {
     xhr_post.onreadystatechange = function() {
         if (xhr_post.readyState === 4) {
             var credit = parseInt(xhr_post.response);
-            var now_credit = parseInt(document.getElementsByName("credit")[0].value)
+            now_credit = parseInt(document.getElementsByName("credit")[0].value);
             console.log(credit, now_credit)
             if (now_credit < credit ) {
-                alert("あなたに誰かがCharinしました！")
+                alert("あなたに誰かがCharinしました！");
+                now_credit = credit;
+
             }
         }
       }
