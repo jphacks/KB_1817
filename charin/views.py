@@ -32,7 +32,6 @@ def get_users_location():
     user = db.session.query(User).filter(User.id==user_id).first()
     latitude = user.latitude
     longitude = user.longitude
-    print(latitude,longitude)
 
     near_radius = math.sqrt((0.009**2)+(0.009**2))
     min_latitude = latitude - near_radius
@@ -49,7 +48,6 @@ def get_users_location():
         else:
             user_dict[near_user.id] = (near_user.latitude,near_user.longitude)
             response.append(user_dict)
-            print(response)
     db.session.close()
     return jsonify(near_users=response)
 
@@ -57,10 +55,13 @@ def get_users_location():
 @app.route('/give', methods=['POST'])
 def give():
     user_id = session.get('user_id')
-    requests = request.form["near_users"]
-    dec = json.loads(requests)
-    near_users = dec["near_users"]
-    if len(near_users) > 0:
+    near_users_list = []
+    data = request.json
+    near_users = data["near_users"]
+    for dic in near_users:
+        for key in dic.keys():
+            near_users_list.append(key)
+    if len(near_users_list) > 0:
         #投げ銭したユーザーから残高を引く
         give_user = db.session.query(User).filter(User.id==user_id).first()
         now_credit = give_user.credit
@@ -68,9 +69,9 @@ def give():
         give_user.credit = after_credit
 
         #近くにいたユーザーで投げ銭を山分け
-        each_take = default_give // len(near_users)
-        for near_user in near_users:
-            user_id = near_user.id
+        each_take = default_give // len(near_users_list)
+        for near_user in near_users_list:
+            user_id = int(near_user)
             user = db.session.query(User).filter(User.id==user_id).first()
             now_credit = user.credit
             after_credit = now_credit + each_take
