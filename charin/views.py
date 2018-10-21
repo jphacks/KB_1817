@@ -8,7 +8,14 @@ default_give = 10
 #index
 @app.route('/')
 def index():
-    return render_template('index.html')
+    user_id = session.get('user_id')
+    credit = ""
+    name = ""
+    if user_id:
+        user = db.session.query(User).filter(User.id==user_id).first()
+        credit = user.credit
+        name = user.name
+    return render_template('index.html',credit=credit,name=name)
 
 #位置情報を定期的にDBヘ
 @app.route('/locate_user', methods=['POST'])
@@ -81,7 +88,7 @@ def give():
         db.session.close()
     else:
         flash('近くに誰もいません...')
-    return ""
+    return redirect(url_for('index'))
 
 #user周り
 #新規user作成
