@@ -24,7 +24,7 @@
     <script>
       var map;
       var marker;
-      window.onload =　function initMap() {
+      window.onload = function initMap() {
       navigator.geolocation.getCurrentPosition(function(position){
         map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: position.coords.latitude, lng: position.coords.longitude},
@@ -46,7 +46,6 @@
   }
       });
       }
-    
 </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsZde941F2kZ3dldrfmmnj_v9ygcOpxhA&callback=initMap"
     async defer></script>
