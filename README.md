@@ -2,7 +2,7 @@
 
 [![Product Name](rm_header.jpg)](https://github.com/jphacks/KB_1817/blob/master/rm_header.jpg?raw=true)
 
-<iframe width=“560” height=“315" src=“https://www.youtube.com/embed/hydAuo3ZiQo” frameborder=“0" allow=“autoplay; encrypted-media” allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/hydAuo3ZiQo/0.jpg)](https://www.youtube.com/watch?v=hydAuo3ZiQo)
 
 ## 製品概要
 ### Tipping × Tech
