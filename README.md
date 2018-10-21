@@ -1,6 +1,6 @@
-# サンプル（プロダクト名）
+# 優しい世界を作る投げ銭アプリ "Charin"
 
-[![Product Name](image.jpg)](./rm_header.jpg)
+[![Product Name](image.png)](https://github.com/jphacks/KB_1817/blob/master/rm_header.jpg?raw=true)
 
 ## 製品概要
 ### Tipping × Tech
