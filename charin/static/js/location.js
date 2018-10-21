@@ -39,4 +39,29 @@ function give() {
     xhr_post.send(JSON.stringify(near_users));
 }
 
+var map;
+var marker;
+function initMap() {
+navigator.geolocation.getCurrentPosition(function(position){
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: position.coords.latitude, lng: position.coords.longitude},
+  zoom: 17
+});
+  marker = new google.maps.Marker({ // マーカーの追加
+  position: {lat: position.coords.latitude, lng: position.coords.longitude}, // マーカーを立てる位置を指定
+map: map // マーカーを立てる地図を指定
+});
+//こっから近くの人のマーカー
+for(var i =0; i <near_users["near_users"].length; i++){
+    var user_dict = near_users["near_users"][i];
+    for ( var key in user_dict){
+    marker = new google.maps.Marker({ // マーカーの追加
+      position: {lat: user_dict[key][0], lng: user_dict[key][1]}, // マーカーを立てる位置を指定
+    map: map // マーカーを立てる地図を指定
+    });
+}
+}
+});
+}
+
 setInterval(geolocation(), 50000);
