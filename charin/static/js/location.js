@@ -25,6 +25,15 @@ function locate(position) {
 
     //データ送る
     var xhr_post = new XMLHttpRequest();
+    xhr_post.onreadystatechange = function() {
+        if (xhr_post.readyState === 4) {
+            var credit = xhr_post.response;
+            var now_credit = document.getElementById("credit")
+            if (now_credit < credit ) {
+                alert("あなたに誰かがCharinしました！")
+            }
+        }
+      }
     xhr_post.open('POST','/locate_user',true);
     xhr_post.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     var latitude = position.coords.latitude;

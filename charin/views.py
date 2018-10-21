@@ -26,12 +26,12 @@ def locate():
     user_id = session.get('user_id')
 
     user_locate = db.session.query(User).filter(User.id==user_id).first()
+    credit = user_locate.credit
     user_locate.latitude = latitude
     user_locate.longitude = longitude
     db.session.commit()
     db.session.close()
-
-    return ""
+    return str(credit)
 
 @app.route('/get_users_location', methods=['GET'])
 def get_users_location():
