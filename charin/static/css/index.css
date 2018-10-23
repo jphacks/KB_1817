@@ -5,6 +5,8 @@
 
 body{
     background-color: #ffc77f;
+    min-height: 2000px;
+    padding-top: 30px;
 }
 p{
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
@@ -13,88 +15,44 @@ p{
     font-weight: bold;
 }
 
-.cp_navi {
-    background-color: #ffffff;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-    color: #888888;
-    display: block;
-    margin: 20px ;
-    overflow: hidden;
-    width: 95%;
+header.jumbotron {
+    height: 510px;
+    background-size: cover;
+    background-color: #ffc77f;
     }
-.cp_navi ul {
-        margin: auto;
-        padding: 0px;
-    }
-.cp_navi ul li {
-        display: inline-block;
-        list-style-type: none;
-        -webkit-transition: all 0.2s;
-                transition: all 0.2s;
-    }
-.cp_navi > ul > li > a > .caret {
-        border-top: 4px solid #aaaaaa;
-        border-right: 4px solid transparent;
-        border-left: 4px solid transparent;
-        content: '';
-        display: inline-block;
-        height: 0;
-        width: 0;
-        vertical-align: middle;
-        -webkit-transition: color 0.1s linear;
-                transition: color 0.1s linear;
-    }
-.cp_navi > ul > li > a {
-        color: #979494;
-        font-size: 40px;
-        font-family: 'Bree Serif', serif;
-        display: block;
-        line-height: 80px;
-        padding: 0 10px;
-        text-decoration: none;
-    }
-.cp_navi > ul > li:hover {
-        background-color: rgb(218, 60, 65);
-    }
-.cp_navi > ul > li:hover > a {
-        color: rgb( 255, 255, 255 );
-    }
-.cp_navi > ul > li:hover > a > .caret {
-        border-top-color: rgb( 255, 255, 255 );
-    }
-.cp_navi > ul > li > div {
-        background-color: rgb(218, 60, 65);
-        border-top: 0;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-        display: none;
-        margin: 0;
-        opacity: 0;
-        position: absolute;
-        width: 165px;
-        visibility: hidden;
-        -webkit-transiton: opacity 0.2s;
-               transition: opacity 0.2s;
-    }
-.cp_navi > ul > li:hover > div {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-    }
-.cp_navi > ul > li > div ul > li {
-        display: block;
-    }
-.cp_navi > ul > li > div ul > li > a {
-        color: #ffffff;
-        display: block;
-        padding: 12px 24px;
-        text-decoration: none;
-    }
-.cp_navi > ul > li > div ul > li:hover > a {
-        background-color: rgba( 255, 255, 255, 0.1);
-    }
+h1.jumbotron-h1{
+    text-indent:30%;
+    font-family: 'Bree Serif', serif;
+　　white-space:nowrap;
+　　overflow:hidden;
+}
+h2.jumbotron-h2{
+    text-indent:30%;
+    font-family: 'Bree Serif', serif;
+    color: #ffffff;
+    font-size: 32px;
+    overflow:hidden;
+}
+@media (max-width: 767px){
+header.jumbotron {
+    height: 410px;
+    background-size: cover;
+}
+/* カルーセル */
+.navbar{
+    /* トップメニュー下のマージンを除去 */
+    margin-bottom: 0;
+}
+
+.carousel-inner img{
+    width: 100%;
+}
+
+.carousel-caption{
+    text-align: right;
+    /* Bootstrapぽくて、バタ臭いので消す */
+    text-shadow: none;
+}
 
 .now_point {
     margin: auto;
@@ -109,6 +67,12 @@ p{
     padding: 20px 40px;
     position: relative;
 }
+
+title.jumbotron {
+    height: 200px;
+    background-size: cover;
+    background-color: #ffc77f;
+    }
 .box1 {
     border: solid 1px #ffc77f;
     box-sizing: border-box;
@@ -119,7 +83,7 @@ p{
     animation: 0.8s linear infinite blink_effect;
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     color: #ff5c5c;
-    font-size: 32px;
+    font-size: 24px;
   }
   @keyframes blink_effect {
       0% {
@@ -132,10 +96,16 @@ p{
           visibility: visible;
       }
   }
-  .map {
+.map {
     border: solid 1px white;
     height: 300px;
     width: 100%;
+}
+h2{
+    text-indent:30%;
+    font-family: 'Bree Serif', serif;
+    color:  #ffc77f;
+
 }
 #overlay {
     display: none;

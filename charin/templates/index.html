@@ -3,10 +3,11 @@
   <head>
     <title>Index</title>
     <meta charset="UTF-8">
-    <meta name = "viewport" content="width-device-width">
+    <meta name = "viewport" content="width-device-width" xinitial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Acme|Bree+Serif|Lobster|Rubik" rel="stylesheet">
     <!--index.cssの読み込み-->
     <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <!--bootstrapの読み込み-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -16,28 +17,69 @@
     <script src="../static/js/location.js"></script>
   </head>
   <body>
-  <div calss ="header">
-      <center><img src="../static/imgs/charin_logo.png" alt="charin_logo" title="ちゃりん"　width="600px" height="300px"></center>
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <img alt="Brand" src="../static/imgs/charin_logo.png" style="height: 30px;">
+              </a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarEexample2">
+              <ul class="nav navbar-nav">
+                <li><a href="#">メニューＡ</a></li>
+                <li class="active"><a href="#">メニューＢ</a></li>
+                <li><a href="#">メニューＣ</a></li>
+              </ul>
+              <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+              <div class="navbar-text">ようこそ ゲスト さん。</div>
+            </div>
+          </div>
+        </nav>
+        <header class="jumbotron">
+            <header class="jumbotron">
+            　<div class="container">
+            　　<h1 class="jumbotron-h1">Charin, World!</h1>
+            　　<h2 class="jumbotron-h2">Let's Charin!</h2>
+            　</div> <!-- /container -->
+            </header>
+            <div class="row">
+                <div class="col-sm-2">
+                  <div class="panel panel-warining">
+                    <div class="panel-heading strong">現在のポイント</div>
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true" style="font-size:30px;"></span>
+                      <div class="panel-body text-right">pt</div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="panel panel-warining">
+                    <div class="panel-heading strong">現在の場所</div>
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true" style="font-size:30px;"></span>
+                      <div class="panel-body text-right">場所</div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-warining">
+                      <div class="panel-heading strong">ユーザーの人数</div>
+                      <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:30px;"></span>
+                        <div class="panel-body text-right">人</div>
+                    </div>
+                  </div>
+              </div>
+  
+<div class="embed-responsive embed-responsive-4by3">
+  <h2>Charin Map</h2>
+    <iframe class="embed-responsive-item" src="maps"></iframe>
   </div>
-  <div class="cp_navi">
-      <ul>
-        <li><a href="Home">Home</a></li>
-        <li><a href="set">Setting</a></li>
-        <li><a href="help">Help</a>
-        </li>
-      </ul>
-      </div>
-  <div class = "now_point">
-    <input type="hidden" name="credit" value="{{ credit }}"/>
-    <p id="cre">現在のポイントは　　　{{ credit }}pt</p>
-  </div>
-  <div class="box1">
-    <img src="../static/imgs/map_title.png" alt="map_titlw" title="ちゃりん"　width="300px" height="150px"></div>
-  <center><iframe src="maps" width="900px" height="900px"></center>
-  </iframe>
-    
-<div class="blink">イイネな出来事があったらクリックしよう！</div>
-<button id="open"><a href="#" onclick="give()"><img border="0" src="../static/imgs/charin_btn1.png" 
+  <div class="blink">イイネな出来事があったらクリックしよう！</div>
+
+<button id="open"><a href="#"><img border="0" src="../static/imgs/charin_btn1.png" 
   onMouseOver="this.src='../static/imgs/charin_btn2.png'" 
   onMouseOut="this.src='../static/imgs/charin_btn1.png'"
   width="400px" height="150px">
@@ -56,7 +98,6 @@
     onMouseOut="this.src='../static/imgs/charin_btn1.png'"
     width="400px" height="150px">
   </a>-->
-     
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </body>
 </html>
