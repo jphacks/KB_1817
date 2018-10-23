@@ -79,7 +79,29 @@
   </div>
   <div class="blink">イイネな出来事があったらクリックしよう！</div>
 
-<button id="open"><a href="#"><img border="0" src="../static/imgs/charin_btn1.png" 
+  <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#sampleModal">
+    Charin!
+    </button>
+    
+    <!-- モーダル・ダイアログ -->
+    <div class="modal fade" id="sampleModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+            <h4 class="modal-title">Charin！しました</h4>
+          </div>
+          <div class="modal-body">
+            近くにいるユーザにCharin!が完了しました
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+            <button type="button" class="btn btn-primary">ボタン</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- <button id="open"><a href="#"><img border="0" src="../static/imgs/charin_btn1.png" 
   onMouseOver="this.src='../static/imgs/charin_btn2.png'" 
   onMouseOut="this.src='../static/imgs/charin_btn1.png'"
   width="400px" height="150px">
@@ -91,7 +113,9 @@
         <button id="close">戻る</button>
     </div>
 </div>
-<div id="overlay"></div>
+<div id="overlay"></div> -->
+
+
 
 <!--  <a href="#"><img border="0" src="../static/imgs/charin_btn1.png" 
     onMouseOver="this.src='../static/imgs/charin_btn2.png'" 
