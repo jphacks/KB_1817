@@ -14,6 +14,12 @@ p{
     font-size: 32px;
     font-weight: bold;
 }
+body #wrapper{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
 
 header.jumbotron {
     height: 510px;
@@ -79,7 +85,7 @@ title.jumbotron {
     line-height: 50px;
     margin-left: 20px;
   }
-  .blink {
+.blink {
     animation: 0.8s linear infinite blink_effect;
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     color: #ff5c5c;

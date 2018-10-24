@@ -15,6 +15,12 @@
     <!--jsの読み込み-->
     <script src="../static/js/index.js"></script>
     <script src="../static/js/location.js"></script>
+    <!--processing.jsの読み込み-->
+    <script type="text/javascript" src="../static/js/processing.min.js"></script>
+    <script type="text/javascript" src="../static/js/fullscreen.js"></script>
+    <script type="application/processing" data-processing-target="pjs" src="../static/js/sakura.pde"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js"></script>
   </head>
   <body>
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -42,13 +48,17 @@
             </div>
           </div>
         </nav>
-        <header class="jumbotron">
+         <div id="wrapper">
+            <canvas id="pjs"/><br>
+         </div>
+         <header class="jumbotron">
             <header class="jumbotron">
             　<div class="container">
+
             　　<h1 class="jumbotron-h1">Charin, World!</h1>
             　　<h2 class="jumbotron-h2">Let's Charin!</h2>
-            　</div> <!-- /container -->
-            </header>
+            　</div>
+            </header> 
             <div class="row">
                 <div class="col-sm-2">
                   <div class="panel panel-warining">
@@ -73,15 +83,15 @@
                   </div>
               </div>
   
-<div class="embed-responsive embed-responsive-4by3">
-  <h2>Charin Map</h2>
-    <iframe class="embed-responsive-item" src="maps"></iframe>
-  </div>
-  <div class="blink">イイネな出来事があったらクリックしよう！</div>
+      <div class="embed-responsive embed-responsive-4by3">
+            <h2>Charin Map</h2>
+            <iframe class="embed-responsive-item" src="maps"></iframe>
+      </div>
+      <div class="blink">イイネな出来事があったらクリックしよう！</div>
 
-  <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#sampleModal">
-    Charin!
-    </button>
+      <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#sampleModal">
+               Charin!
+      </button>
     
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal" tabindex="-1">
